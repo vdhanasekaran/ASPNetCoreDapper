@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Employee>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Employee Web App</h4>
+<h4>
+    <a asp-action="AddEmployee">Add Employee</a>
+</h4>
+<div>
+    <table class="table table-responsive table-bordered panel-primary">
+        <thead>
+        <th>Employee Name</th>
+        <th>Designation</th>
+        <th>Contact</th>
+        <th>Address</th>
+        <th>Date Of Joining</th>
+        <th></th>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(model => item.EmployeeName)</td>
+                    <td>@Html.DisplayFor(model => item.EmployeeDesignation)</td>
+                    <td>@Html.DisplayFor(model => item.Contact)</td>
+                    <td>@Html.DisplayFor(model => item.Address)</td>
+                    <td>@Html.DisplayFor(model => item.DOJ)</td>
+                    <td>
+                        <a asp-action="EditEmployee" asp-route-id="@item.Id">Edit</a>|
+                        <a asp-action="DeleteEmployee" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div> 

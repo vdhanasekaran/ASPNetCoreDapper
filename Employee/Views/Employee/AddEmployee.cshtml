@@ -1,0 +1,47 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "AddEmployee";
+}
+
+<h2>Add Employee</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddEmployee">
+            <div class="">
+                <label asp-for="EmployeeName" class="control-label"></label>
+                <input asp-for="EmployeeName" class="form-control" />
+                <span class="alert-danger" asp-validation-for="EmployeeName"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployeeDesignation" class="control-label"></label>
+                <input asp-for="EmployeeDesignation" class="form-control" />
+                <span class="alert-danger" asp-validation-for="EmployeeDesignation"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contact" class="control-label"></label>
+                <input asp-for="Contact" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Contact"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Address"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DOJ" class="control-label"></label>
+                <input asp-for="DOJ" type="date" class="form-control" />
+                <span class="alert-danger" asp-validation-for="DOJ"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create Employee" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-8">
+
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back To Home</a>
+</div>
+
